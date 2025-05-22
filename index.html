@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALLION: O CÓDIGO</title>
+  <meta name="description" content="⚠️ Acesso restrito. Código secreto para domínio mental, poder masculino e guerra psicológica. Proibido para os fracos.">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cinzel', serif;
+      color: #fff;
+      min-height: 100vh;
+      background-image: url('./background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: black;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 54px;
+      color: #ff0000;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background-color: #cc0000;
+      color: white;
+      padding: 20px 35px;
+      border: 3px solid #ff4d4d;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 25px 0;
+      max-width: 350px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Cinzel', serif;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 14px;
+      margin: 40px 0;
+      font-size: 20px;
+      line-height: 1.8;
+      font-family: Georgia, serif;
+    }
+
+    .card em {
+      color: #ff4d4d;
+      font-style: normal;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      .card {
+        font-size: 16px;
+        padding: 24px;
+      }
+      .btn {
+        font-size: 18px;
+        padding: 18px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>VALLION: O CÓDIGO</h1>
+    <h2>Disciplina de Guerra Mental. Estratégia, Frieza Emocional e Ascensão.</h2>
+
+    <div id="contador" style="font-size: 22px; font-weight: bold; margin-top: 30px; color: #ff4d4d;"></div>
+
+    <script>
+    function iniciarContador(duracao, display, ctaWrapper) {
+        var timer = duracao, minutos, segundos;
+        var encerrado = false;
+
+        var intervalo = setInterval(function () {
+            if (encerrado) return;
+
+            minutos = parseInt(timer / 60, 10);
+            segundos = parseInt(timer % 60, 10);
+
+            minutos = minutos < 10 ? "0" + minutos : minutos;
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+
+            display.innerHTML = "<span style='font-size:26px;color:#ff4d4d;font-weight:bold;'>⚠️ Oferta expira em: " + minutos + ":" + segundos + "</span>";
+
+            if (--timer < 0) {
+                encerrado = true;
+                clearInterval(intervalo);
+                ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>";
+                display.textContent = "⚠️ Tempo esgotado.";
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        var cincoMinutos = 60 * 5,
+            display = document.getElementById("contador"),
+            ctaWrapper = document.getElementById("cta-wrapper");
+        iniciarContador(cincoMinutos, display, ctaWrapper);
+    };
+    </script>
+
+    <div id="cta-wrapper">
+      <a href="https://pay.kiwify.com.br/NoFM0zx" class="btn">ACESSAR O CÓDIGO AGORA</a>
+    </div>
+
+    <div class="card">
+      <p><em>“Nos tempos antigos o homem lutava contra feras. Hoje, as feras habitam dentro dele...”</em></p>
+      <p>Este não é um livro. É um código. Um chamado brutal para os que recusam a fraqueza e buscam poder interno, comando mental e superioridade emocional.</p>
+      <p><strong>Chega de sobreviver. É hora de dominar.</strong></p>
+      <p>Charme Letal. Guerra das Emoções. O Código Vallion transforma tua mente em arma. Vencer não é escolha — é programação.</p>
+    </div>
+  </div>
+</body>
+</html>
