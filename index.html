@@ -1,164 +1,123 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VALLION: O CÓDIGO</title>
-  <meta name="description" content="⚠️ Acesso restrito. Código secreto para domínio mental, poder masculino e guerra psicológica. Proibido para os fracos.">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>VALLION: O CÓDIGO</title> <meta name="description" content="⚠️ Acesso restrito. Código secreto para domínio mental, poder masculino e guerra psicológica. Proibido para os fracos."> <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet"> <style> * { box-sizing: border-box; }
+css
+Copiar
+Editar
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  min-height: 100dvh;
+  background: url('./background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: black;
+  overflow-x: hidden;
+}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Cinzel', serif;
-      color: #fff;
-      min-height: 100dvh;
-      background: url('./background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      background-color: black;
-      overflow-x: hidden;
-    }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5vh 5vw;
+  min-height: 100dvh;
+  text-align: center;
+}
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 5vh 5vw;
-      min-height: 100dvh;
-      text-align: center;
-    }
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #ff0000;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px black;
+}
 
-    h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      color: #ff0000;
-      margin-bottom: 15px;
-      text-shadow: 1px 1px 4px black;
-    }
+h2 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: normal;
+  margin-bottom: 40px;
+}
 
-    h2 {
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      font-weight: normal;
-      margin-bottom: 40px;
-    }
+#contador-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
 
-    #contador {
-      font-size: clamp(1rem, 3vw, 1.375rem);
-      font-weight: bold;
-      margin: 30px 0 20px;
-      color: #ff4d4d;
-      display: block;
-    }
+#contador {
+  font-size: clamp(1rem, 3vw, 1.375rem);
+  font-weight: bold;
+  color: #ff4d4d;
+  display: block;
+}
 
-    #cta-wrapper {
-      margin-bottom: 30px;
-    }
+#cta-wrapper {
+  width: 100%;
+  margin-bottom: 40px;
+}
 
-    .btn {
-      background-color: #cc0000;
-      color: white;
-      padding: 1.2rem 2rem;
-      border: 3px solid #ff4d4d;
-      border-radius: 12px;
-      font-size: clamp(1rem, 4vw, 1.25rem);
-      cursor: pointer;
-      text-decoration: none;
-      margin: 0 auto;
-      max-width: 350px;
-      width: 100%;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+.btn {
+  background-color: #cc0000;
+  color: white;
+  padding: 1.2rem 2rem;
+  border: 3px solid #ff4d4d;
+  border-radius: 12px;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
-    }
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+}
 
-    .card {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      border-radius: 14px;
-      margin: 40px 0;
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      line-height: 1.8;
-      font-family: Georgia, serif;
-      width: 100%;
-    }
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 14px;
+  margin: 40px 0;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  font-family: Georgia, serif;
+  width: 100%;
+}
 
-    .card em {
-      color: #ff4d4d;
-      font-style: normal;
-    }
+.card em {
+  color: #ff4d4d;
+  font-style: normal;
+}
 
-    @media (max-width: 480px) {
-      .btn {
-        padding: 1rem;
-      }
+@media (max-width: 480px) {
+  .btn {
+    padding: 1rem;
+  }
 
-      .card {
-        padding: 1.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>VALLION: O CÓDIGO</h1>
-    <h2>Disciplina de Guerra Mental. Estratégia, Frieza Emocional e Ascensão.</h2>
+  .card {
+    padding: 1.5rem;
+  }
+}
+</style> </head> <body> <div class="container"> <h1>VALLION: O CÓDIGO</h1> <h2>Disciplina de Guerra Mental. Estratégia, Frieza Emocional e Ascensão.</h2>
+php-template
+Copiar
+Editar
+<div id="contador-wrapper">
+  <div id="contador"></div>
+</div>
 
-    <div id="contador"></div>
+<div id="cta-wrapper">
+  <a href="https://pay.kiwify.com.br/NoFM0zx" class="btn">ACESSAR O CÓDIGO AGORA</a>
+</div>
 
-    <div id="cta-wrapper">
-      <a href="https://pay.kiwify.com.br/NoFM0zx" class="btn">ACESSAR O CÓDIGO AGORA</a>
-    </div>
-
-    <div class="card">
-      <p><em>“Nos tempos antigos o homem lutava contra feras. Hoje, as feras habitam dentro dele...”</em></p>
-      <p>Este não é um livro. É um código. Um chamado brutal para os que recusam a fraqueza e buscam poder interno, comando mental e superioridade emocional.</p>
-      <p><strong>Chega de sobreviver. É hora de dominar.</strong></p>
-      <p>Charme Letal. Guerra das Emoções. O Código Vallion transforma tua mente em arma. Vencer não é escolha — é programação.</p>
-    </div>
-  </div>
-
-  <script>
-    function iniciarContador(duracao, display, ctaWrapper) {
-      var timer = duracao, minutos, segundos;
-      var encerrado = false;
-
-      var intervalo = setInterval(function () {
-        if (encerrado) return;
-
-        minutos = parseInt(timer / 60, 10);
-        segundos = parseInt(timer % 60, 10);
-
-        minutos = minutos < 10 ? "0" + minutos : minutos;
-        segundos = segundos < 10 ? "0" + segundos : segundos;
-
-        display.innerHTML = "<span style='font-size:26px;color:#ff4d4d;font-weight:bold;'>⚠️ Oferta expira em: " + minutos + ":" + segundos + "</span>";
-
-        if (--timer < 0) {
-          encerrado = true;
-          clearInterval(intervalo);
-          ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>";
-          display.textContent = "⚠️ Tempo esgotado.";
-        }
-      }, 1000);
-    }
-
-    window.onload = function () {
-      var cincoMinutos = 60 * 5,
-          display = document.getElementById("contador"),
-          ctaWrapper = document.getElementById("cta-wrapper");
-      iniciarContador(cincoMinutos, display, ctaWrapper);
-    };
-  </script>
-</body>
-</html>
-
+<div class="card">
+  <p><em>“Nos tempos antigos o homem lutava contra feras. Hoje, as feras habitam dentro dele...”</em></p>
+  <p>Este não é um livro. É um código. Um chamado brutal para os que recusam a fraqueza e buscam poder interno, comando mental e superioridade emocional.</p>
+  <p><strong>Chega de sobreviver. É hora de dominar.</strong></p>
+  <p>Charme Letal. Guerra das Emoções. O Código Vallion transforma tua mente em arma. Vencer não é escolha — é programação.</p>
+</div>
+</div> <script> function iniciarContador(duracao, display, ctaWrapper) { let timer = duracao, minutos, segundos; let encerrado = false; const intervalo = setInterval(() => { if (encerrado) return; minutos = parseInt(timer / 60, 10); segundos = parseInt(timer % 60, 10); minutos = minutos < 10 ? "0" + minutos : minutos; segundos = segundos < 10 ? "0" + segundos : segundos; display.innerHTML = "⚠️ Oferta expira em: " + minutos + ":" + segundos; if (--timer < 0) { encerrado = true; clearInterval(intervalo); ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>"; display.textContent = "⚠️ Tempo esgotado."; } }, 1000); } window.onload = function () { const cincoMinutos = 60 * 5; const display = document.getElementById("contador"); const ctaWrapper = document.getElementById("cta-wrapper"); iniciarContador(cincoMinutos, display, ctaWrapper); }; </script> </body> </html>
