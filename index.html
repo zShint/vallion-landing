@@ -48,6 +48,18 @@
       margin-bottom: 40px;
     }
 
+    #contador {
+      font-size: clamp(1rem, 3vw, 1.375rem);
+      font-weight: bold;
+      margin: 30px 0 20px;
+      color: #ff4d4d;
+      display: block;
+    }
+
+    #cta-wrapper {
+      margin-bottom: 30px;
+    }
+
     .btn {
       background-color: #cc0000;
       color: white;
@@ -57,7 +69,7 @@
       font-size: clamp(1rem, 4vw, 1.25rem);
       cursor: pointer;
       text-decoration: none;
-      margin: 25px auto;
+      margin: 0 auto;
       max-width: 350px;
       width: 100%;
       box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
@@ -85,13 +97,6 @@
       font-style: normal;
     }
 
-    #contador {
-      font-size: clamp(1rem, 3vw, 1.375rem);
-      font-weight: bold;
-      margin-top: 30px;
-      color: #ff4d4d;
-    }
-
     @media (max-width: 480px) {
       .btn {
         padding: 1rem;
@@ -110,39 +115,6 @@
 
     <div id="contador"></div>
 
-    <script>
-      function iniciarContador(duracao, display, ctaWrapper) {
-        var timer = duracao, minutos, segundos;
-        var encerrado = false;
-
-        var intervalo = setInterval(function () {
-          if (encerrado) return;
-
-          minutos = parseInt(timer / 60, 10);
-          segundos = parseInt(timer % 60, 10);
-
-          minutos = minutos < 10 ? "0" + minutos : minutos;
-          segundos = segundos < 10 ? "0" + segundos : segundos;
-
-          display.innerHTML = "<span style='font-size:26px;color:#ff4d4d;font-weight:bold;'>⚠️ Oferta expira em: " + minutos + ":" + segundos + "</span>";
-
-          if (--timer < 0) {
-            encerrado = true;
-            clearInterval(intervalo);
-            ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>";
-            display.textContent = "⚠️ Tempo esgotado.";
-          }
-        }, 1000);
-      }
-
-      window.onload = function () {
-        var cincoMinutos = 60 * 5,
-            display = document.getElementById("contador"),
-            ctaWrapper = document.getElementById("cta-wrapper");
-        iniciarContador(cincoMinutos, display, ctaWrapper);
-      };
-    </script>
-
     <div id="cta-wrapper">
       <a href="https://pay.kiwify.com.br/NoFM0zx" class="btn">ACESSAR O CÓDIGO AGORA</a>
     </div>
@@ -154,6 +126,39 @@
       <p>Charme Letal. Guerra das Emoções. O Código Vallion transforma tua mente em arma. Vencer não é escolha — é programação.</p>
     </div>
   </div>
+
+  <script>
+    function iniciarContador(duracao, display, ctaWrapper) {
+      var timer = duracao, minutos, segundos;
+      var encerrado = false;
+
+      var intervalo = setInterval(function () {
+        if (encerrado) return;
+
+        minutos = parseInt(timer / 60, 10);
+        segundos = parseInt(timer % 60, 10);
+
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+
+        display.innerHTML = "<span style='font-size:26px;color:#ff4d4d;font-weight:bold;'>⚠️ Oferta expira em: " + minutos + ":" + segundos + "</span>";
+
+        if (--timer < 0) {
+          encerrado = true;
+          clearInterval(intervalo);
+          ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>";
+          display.textContent = "⚠️ Tempo esgotado.";
+        }
+      }, 1000);
+    }
+
+    window.onload = function () {
+      var cincoMinutos = 60 * 5,
+          display = document.getElementById("contador"),
+          ctaWrapper = document.getElementById("cta-wrapper");
+      iniciarContador(cincoMinutos, display, ctaWrapper);
+    };
+  </script>
 </body>
 </html>
 
