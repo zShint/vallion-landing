@@ -7,24 +7,32 @@
   <meta name="description" content="⚠️ Acesso restrito. Código secreto para domínio mental, poder masculino e guerra psicológica. Proibido para os fracos.">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Cinzel', serif;
       color: #fff;
       min-height: 100dvh;
-      background-image: url('./background.jpg');
+      background: url('./background.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       background-color: black;
+      overflow-x: hidden;
     }
 
     .container {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       max-width: 900px;
       margin: 0 auto;
       padding: 5vh 5vw;
+      min-height: 100dvh;
+      text-align: center;
     }
 
     h1 {
@@ -49,13 +57,11 @@
       font-size: clamp(1rem, 4vw, 1.25rem);
       cursor: pointer;
       text-decoration: none;
-      display: inline-block;
       margin: 25px auto;
       max-width: 350px;
       width: 100%;
       box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
       transition: transform 0.2s, box-shadow 0.2s;
-      font-family: 'Cinzel', serif;
     }
 
     .btn:hover {
@@ -71,6 +77,7 @@
       font-size: clamp(1rem, 2.5vw, 1.25rem);
       line-height: 1.8;
       font-family: Georgia, serif;
+      width: 100%;
     }
 
     .card em {
@@ -104,36 +111,36 @@
     <div id="contador"></div>
 
     <script>
-    function iniciarContador(duracao, display, ctaWrapper) {
+      function iniciarContador(duracao, display, ctaWrapper) {
         var timer = duracao, minutos, segundos;
         var encerrado = false;
 
         var intervalo = setInterval(function () {
-            if (encerrado) return;
+          if (encerrado) return;
 
-            minutos = parseInt(timer / 60, 10);
-            segundos = parseInt(timer % 60, 10);
+          minutos = parseInt(timer / 60, 10);
+          segundos = parseInt(timer % 60, 10);
 
-            minutos = minutos < 10 ? "0" + minutos : minutos;
-            segundos = segundos < 10 ? "0" + segundos : segundos;
+          minutos = minutos < 10 ? "0" + minutos : minutos;
+          segundos = segundos < 10 ? "0" + segundos : segundos;
 
-            display.innerHTML = "<span style='font-size:26px;color:#ff4d4d;font-weight:bold;'>⚠️ Oferta expira em: " + minutos + ":" + segundos + "</span>";
+          display.innerHTML = "<span style='font-size:26px;color:#ff4d4d;font-weight:bold;'>⚠️ Oferta expira em: " + minutos + ":" + segundos + "</span>";
 
-            if (--timer < 0) {
-                encerrado = true;
-                clearInterval(intervalo);
-                ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>";
-                display.textContent = "⚠️ Tempo esgotado.";
-            }
+          if (--timer < 0) {
+            encerrado = true;
+            clearInterval(intervalo);
+            ctaWrapper.innerHTML = "<div style='font-size:20px; color: #ff4d4d; margin-top:20px;'>⚠️ Oferta encerrada. Acesso indisponível.</div>";
+            display.textContent = "⚠️ Tempo esgotado.";
+          }
         }, 1000);
-    }
+      }
 
-    window.onload = function () {
+      window.onload = function () {
         var cincoMinutos = 60 * 5,
             display = document.getElementById("contador"),
             ctaWrapper = document.getElementById("cta-wrapper");
         iniciarContador(cincoMinutos, display, ctaWrapper);
-    };
+      };
     </script>
 
     <div id="cta-wrapper">
@@ -149,3 +156,4 @@
   </div>
 </body>
 </html>
+
